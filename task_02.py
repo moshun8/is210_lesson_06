@@ -2,23 +2,21 @@
 # -*- coding: utf-8 -*-
 """Averaging Lists"""
 
-
-import task_01
 import data
+import task_01
+
 
 def get_average(num=[]):
-    sum = 0
-    divide_by = len(num)
-    for x in num:
-        sum += x
-    return float(sum / divide_by)
+    """Gets the average of a list"""
+    TOTAL = 0
+    DIVIDE_BY = len(num)
+    for number in num:
+        TOTAL += number
+    return float(TOTAL / DIVIDE_BY)
 
 TOTAL_AVG = get_average(data.TASK_O1)
-print TOTAL_AVG
-EVEN_AVG = get_average(task_01.evens_and_odds(data.TASK_O1, True))
-print EVEN_AVG
+EVEN_AVG = get_average(task_01.evens_and_odds(data.TASK_O1))
 ODD_AVG = get_average(task_01.evens_and_odds(data.TASK_O1, False))
-print ODD_AVG
 
 REPORT = (
     "Task 02 Report"
