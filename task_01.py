@@ -3,17 +3,14 @@
 """Evens and Odds"""
 
 
+import data
+
 def evens_and_odds(numbers=[], show_even=True):
-    evens = []
-    odds = []
-    for num in numbers:
+    """Finds even and odd numbers, adds to list"""
+    for num in data.TASK_01:
         if num % 2 == 0:
-             num is "even"
+            if show_even == True:
+                evens.append(num)
         else:
-             num is "odd"
-             odds.append(num)
-    while show_even:
-        if num is "even":
-             evens.append(num)
-        else:
-             odds.append(num)
+            if show_even == False:
+                odds.append(num)
