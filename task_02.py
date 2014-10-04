@@ -8,11 +8,11 @@ import task_01
 
 def get_average(num=[]):
     """Gets the average of a list"""
-    TOTALS = 0
-    NUMDIVIDE = len(num)
+    total = 0
+    divide = len(num)
     for number in num:
-        TOTALS += number
-    return float(TOTALS / NUMDIVIDE)
+        total += number
+    return float(total / divide)
 
 TOTAL_AVG = get_average(data.TASK_O1)
 EVEN_AVG = get_average(task_01.evens_and_odds(data.TASK_O1))
