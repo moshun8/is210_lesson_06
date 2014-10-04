@@ -14,9 +14,9 @@ def test_passwords(pwd_list=[]):
         fields = entry.split(':')  # splits items into pieces by :
         word = crack_it(fields[1])  # word = encrypted password
         if word != '':  # if the field isn't empty, add to list
-            crackedPwds.append((fields[4], word))  # report wants names
+            cracked_pwds.append((fields[4], word))  # report wants names
 
-    report(crackedPwds)
+    report(cracked_pwds)
 
 
 def crack_it(crypt_pwd):
