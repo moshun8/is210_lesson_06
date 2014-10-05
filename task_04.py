@@ -12,10 +12,12 @@ def test_passwords(pwd_list=[]):
     cracked_pwds = []
     if isinstance(pwd_list, list):
         for entry in pwd_list:
-            fields = entry.split(':')  # splits items into pieces by :
-            word = crack_it(fields[1])  # word = encrypted password
-            if word != '':  # if the field isn't empty, add to list
-                cracked_pwds.append((fields[4], word))  # report wants names
+            if entry == None:
+                continue
+            fields = entry.split(':')
+            word = crack_it(fields[1])
+            if word != '':
+                cracked_pwds.append((fields[4], word))
     else:
         pwd_list = []
         return pwd_list
