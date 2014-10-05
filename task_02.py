@@ -8,8 +8,8 @@ import task_01
 
 def get_average(num=[]):
     """Gets the average of a list"""
-    total = 0
-    divide = len(num)
+    total = float(0.0)
+    divide = float(len(num))
     for number in num:
         total += number
     return float(total / divide)
