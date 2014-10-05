@@ -18,6 +18,7 @@ TOTAL_AVG = get_average(data.TASK_O1)
 EVEN_AVG = get_average(task_01.evens_and_odds(data.TASK_O1))
 ODD_AVG = get_average(task_01.evens_and_odds(data.TASK_O1, False))
 
+
 REPORT = (
     "Task 02 Report"
     "\n{0}"
