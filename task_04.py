@@ -10,12 +10,15 @@ SALT = 'monosodium-glutamate'
 def test_passwords(pwd_list=[]):
     """"reads list, tests the password"""
     cracked_pwds = []
-    for entry in pwd_list:
-        fields = entry.split(':')  # splits items into pieces by :
-        word = crack_it(fields[1])  # word = encrypted password
-        if word != '':  # if the field isn't empty, add to list
-            cracked_pwds.append((fields[4], word))  # report wants names
-
+    if isinstance(pwd_list, list):
+        for entry in pwd_list:
+            fields = entry.split(':')  # splits items into pieces by :
+            word = crack_it(fields[1])  # word = encrypted password
+            if word != '':  # if the field isn't empty, add to list
+                cracked_pwds.append((fields[4], word))  # report wants names
+    else:
+        pwd_list = []
+        return pwd_list
     report(cracked_pwds)
 
 
@@ -32,6 +35,7 @@ def report(cracked_pwds):
     print 'Cracked passwords'
     print '-------------------------------'
     for pwd in cracked_pwds:
-        print '{0}     {1}'.format(pwd[0], pwd[1])
+        print '{0:<15}  {1:<5}'.format(pwd[0], pwd[1])
 
 test_passwords(data.PASSWD)
+test_passwords(None)
