@@ -22,15 +22,14 @@ def test_passwords(pwd_list):
 
 def crack_it(crypt_pwd):
     """compares password to common ones"""
-    for word in data.WORDS:
-        if crypt_pwd == data.crypt(word, SALT):
-            return word
-    return ''
+    for wordy in data.WORDS:
+        if crypt_pwd == data.crypt(wordy, SALT):
+            return wordy
 
 
 def report(cracked_pwds):
     """"display bad passwords"""
-    print 'Cracked passwords'
+    print '\nCracked passwords'
     print '-------------------------------'
     if isinstance(cracked_pwds, list):
         for pwd in cracked_pwds:
