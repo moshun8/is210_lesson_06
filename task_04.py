@@ -16,9 +16,6 @@ def test_passwords(pwd_list):
             word = crack_it(fields[1])
             if word:
                 cracked_pwds.append((fields[4], word))
-    else:
-        pwd_list = []
-        return pwd_list
     report(cracked_pwds)
 
 
@@ -41,5 +38,5 @@ def report(cracked_pwds):
         cracked_pwds = []
         return cracked_pwds
 
-test_passwords(data.PASSWD)
-test_passwords(None)
+results = test_passwords(data.PASSWD)
+print results
