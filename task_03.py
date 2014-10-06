@@ -6,7 +6,7 @@
 import data
 
 
-def bubble_sort(lst=[]):
+def bubble_sort(lst):
     """Puts numbers in order 1 by 1"""
     if isinstance(lst, list):
         length = len(lst) - 1
@@ -16,7 +16,8 @@ def bubble_sort(lst=[]):
             for numbers in range(length):
                 if lst[numbers] > lst[numbers + 1]:
                     sorted = False
-                    lst[numbers], lst[numbers + 1] = lst[numbers + 1], lst[numbers]
+                    lst[numbers], lst[numbers + 1] = lst[
+                        numbers + 1], lst[numbers]
     else:
         lst = []
     return lst
