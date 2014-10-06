@@ -10,12 +10,12 @@ def bubble_sort(lst):
     """Puts numbers in order 1 by 1"""
     if isinstance(lst, list):
         length = len(lst) - 1
-        sorted = False
-        while not sorted:
+        is_sorted = False
+        while not is_sorted:
             is_sorted = True
             for numbers in range(length):
                 if lst[numbers] > lst[numbers + 1]:
-                    sorted = False
+                    is_sorted = False
                     lst[numbers], lst[numbers + 1] = lst[
                         numbers + 1], lst[numbers]
     else:

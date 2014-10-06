@@ -12,8 +12,6 @@ def test_passwords(pwd_list):
     cracked_pwds = []
     if isinstance(pwd_list, list):
         for entry in pwd_list:
-#            if entry == None:
-#                continue
             fields = entry.split(':')
             word = crack_it(fields[1])
             if word:
