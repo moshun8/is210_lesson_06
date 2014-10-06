@@ -7,16 +7,16 @@ import data
 SALT = 'monosodium-glutamate'
 
 
-def test_passwords(pwd_list=[]):
+def test_passwords(pwd_list):
     """"reads list, tests the password"""
     cracked_pwds = []
     if isinstance(pwd_list, list):
         for entry in pwd_list:
-            if entry == None:
-                continue
+#            if entry == None:
+#                continue
             fields = entry.split(':')
             word = crack_it(fields[1])
-            if word != '':
+            if word:
                 cracked_pwds.append((fields[4], word))
     else:
         pwd_list = []
@@ -36,8 +36,12 @@ def report(cracked_pwds):
     """"display bad passwords"""
     print 'Cracked passwords'
     print '-------------------------------'
-    for pwd in cracked_pwds:
-        print '{0:<15}  {1:<5}'.format(pwd[0], pwd[1])
+    if isinstance(cracked_pwds, list):
+        for pwd in cracked_pwds:
+            print '{0:<15}  {1:<5}'.format(pwd[0], pwd[1])
+    else:
+        cracked_pwds = []
+        return cracked_pwds
 
 test_passwords(data.PASSWD)
 test_passwords(None)
