@@ -17,6 +17,7 @@ def test_passwords(pwd_list):
             if word:
                 cracked_pwds.append((fields[4], word))
     report(cracked_pwds)
+    return cracked_pwds
 
 
 def crack_it(crypt_pwd):
@@ -34,9 +35,5 @@ def report(cracked_pwds):
     if isinstance(cracked_pwds, list):
         for pwd in cracked_pwds:
             print '{0:<15}  {1:<5}'.format(pwd[0], pwd[1])
-    else:
-        cracked_pwds = []
-        return cracked_pwds
 
-results = test_passwords(data.PASSWD)
-print results
+test_passwords(data.PASSWD)
