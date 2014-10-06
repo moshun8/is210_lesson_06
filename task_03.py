@@ -12,7 +12,7 @@ def bubble_sort(lst):
         length = len(lst) - 1
         sorted = False
         while not sorted:
-            sorted = True
+            is_sorted = True
             for numbers in range(length):
                 if lst[numbers] > lst[numbers + 1]:
                     sorted = False

@@ -6,7 +6,7 @@
 import data
 
 
-def evens_and_odds(numbers=[], show_even=True):
+def evens_and_odds(numbers, show_even=True):
     """Finds even and odd numbers, adds to list"""
     odd_or_even = []
     for num in numbers:
@@ -17,3 +17,4 @@ def evens_and_odds(numbers=[], show_even=True):
             if show_even is False:
                 odd_or_even.append(num)
     return odd_or_even
+print evens_and_odds(data.TASK_O1)
